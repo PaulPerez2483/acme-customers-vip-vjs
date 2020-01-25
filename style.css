@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.container > div {
+	margin: 5px 0;
+	padding: 10px;
+	border: 1px solid black;
+}
+.green {
+	background-color: green;
+	color: white;
+}
+
+.notgreen {
+	background-color: lightgoldenrodyellow;
+}
+
+.container + div {
+	margin: 5px 0;
+	padding: 10px;
+	border: 1px solid black;
+	width: 150px;
+	display: flex;
+	align-items: center;
+}
+
+.vip {
+	width: 50px;
+	height: 50px;
+	background-color: green;
+	display: block;
+	margin-left: 10px;
+}
