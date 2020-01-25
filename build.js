@@ -53,6 +53,17 @@ form.addEventListener("submit", (ev) => {
 		let li =
 			'<li class="red"> name required </li> <li class="red">  please enter a valid date </li>';
 		document.querySelector(".validation").innerHTML = li;
+		return;
+	}
+
+	if (customerName === "") {
+		let li = '<li class="red"> name required </li>';
+		document.querySelector(".validation").innerHTML = li;
+		return;
+	} else if (customerJoined === "") {
+		let li = '<li class="red"> date required </li>';
+		document.querySelector(".validation").innerHTML = li;
+		return;
 	}
 
 	let newEmployee = {
