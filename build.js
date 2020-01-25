@@ -18,11 +18,23 @@ const customers = [
 
 const container = document.querySelector(".container");
 console.log(container);
+
+
+customers.forEach(customer => {
+	customer.dateJoined = new Date(customer.dateJoined);
+});
+customers.sort((a, b) => a.dateJoined - b.dateJoined);
+
+
 let html = customers
 	.map((employee) => {
+		
+		let diff = new Date() - employee.dateJoined;
+		
+		let oneYear = 1000*60*60*24*365;
 		return `<div class=${employee.isVIP ? "green" : "notgreen"} data-idx=${
 			employee.id
-		}>${employee.name} joined on ${employee.dateJoined}</div>`;
+		}>${employee.name} joined on ${employee.dateJoined.toLocaleDateString()} And has been a member for ${(diff/oneYear).toFixed(1)} years</div>`;
 	})
 	.join("");
 
